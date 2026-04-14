@@ -73,6 +73,13 @@ dependencies {
 
 ---
 
+## Direct Download
+
+Download the latest JAR directly:
+- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
+
+Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
+
 ## Building
 
 See [COMPILE.md](COMPILE.md) for build instructions.
