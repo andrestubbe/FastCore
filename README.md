@@ -8,15 +8,6 @@
 
 ---
 
-## Direct Download
-
-Download the latest JAR directly:
-- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
-
-Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
-
----
-
 ## Quick Start
 
 ```java
@@ -46,6 +37,13 @@ System.out.println(FastCore.getPlatformInfo());
 ---
 
 ## Installation
+
+### Direct Download (No Maven Required)
+
+Download the latest JAR directly:
+- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
+
+Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
 
 ### JitPack (for Maven/Gradle projects)
 
