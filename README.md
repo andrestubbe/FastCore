@@ -8,6 +8,15 @@
 
 ---
 
+## Direct Download
+
+Download the latest JAR directly:
+- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
+
+Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
+
+---
+
 ## Quick Start
 
 ```java
@@ -27,43 +36,6 @@ System.out.println(FastCore.getPlatformInfo());
 
 ---
 
-## Installation
-
-### JitPack (Recommended)
-
-Add repository:
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-Dependency:
-```xml
-<dependency>
-    <groupId>com.github.andrestubbe</groupId>
-    <artifactId>fastcore</artifactId>
-    <version>v1.0.0</version>
-</dependency>
-```
-
-### Gradle
-
-```groovy
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.andrestubbe:fastcore:v1.0.0'
-}
-```
-
----
-
 ## Features
 
 - **Cross-platform** — Windows (.dll), Linux (.so), macOS (.dylib)
@@ -73,12 +45,36 @@ dependencies {
 
 ---
 
-## Direct Download
+## Installation
 
-Download the latest JAR directly:
-- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
+### JitPack (for Maven/Gradle projects)
 
-Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
+**Maven:**
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.andrestubbe</groupId>
+    <artifactId>fastcore</artifactId>
+    <version>v1.0.0</version>
+</dependency>
+```
+
+**Gradle:**
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.andrestubbe:fastcore:v1.0.0'
+}
+```
 
 ## Building
 
