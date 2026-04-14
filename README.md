@@ -1,27 +1,38 @@
-# FastJava Project Blueprint
+# FastCore — Unified JNI Loader for FastJava
 
-> **Template structure for all FastJava libraries** — JVM acceleration via JNI/SIMD
+> **Cross-platform native library loading** for Java 25+ — Windows, Linux, macOS
 
-[![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
+[![Java](https://img.shields.io/badge/Java-25+-blue.svg)](https://www.java.com)
 [![Maven](https://img.shields.io/badge/Maven-3.9+-orange.svg)](https://maven.apache.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-ready-green.svg)](https://search.maven.org)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-planned-green.svg)](https://search.maven.org)
 
 ---
 
 ## Quick Start
 
 ```bash
-# Clone template
-git clone https://github.com/andrestubbe/YOUR-PROJECT.git
-cd YOUR-PROJECT
+# Clone repository
+git clone https://github.com/andrestubbe/FastCore.git
+cd FastCore
 
-# Build and test
-mvn clean test
+# Build
+mvn clean package
 
-# Run demo
-mvn compile exec:java -Dexec.mainClass="fastXXX.Demo"
+# Run platform info
+mvn compile exec:java
 ```
+
+## What is FastCore?
+
+FastCore is the foundation of the FastJava ecosystem. It provides unified native library loading across Windows, Linux, and macOS — eliminating boilerplate code for JNI-based modules.
+
+**Key Features:**
+- **Cross-platform support** — Windows (.dll), Linux (.so), macOS (.dylib)
+- **Automatic extraction** — Native libraries from JAR to temp
+- **Smart loading** — System path first, fallback to extracted
+- **Resource cleanup** — Automatic temp file removal
+- **Zero dependencies** — Pure Java, no external libraries
 
 ---
 
@@ -32,7 +43,7 @@ mvn compile exec:java -Dexec.mainClass="fastXXX.Demo"
 ```xml
 <dependency>
     <groupId>io.github.andrestubbe</groupId>
-    <artifactId>fastXXX</artifactId>
+    <artifactId>fastcore</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -53,7 +64,7 @@ Dependency:
 ```xml
 <dependency>
     <groupId>com.github.andrestubbe</groupId>
-    <artifactId>fastXXX</artifactId>
+    <artifactId>fastcore</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -62,7 +73,7 @@ Dependency:
 
 ```groovy
 dependencies {
-    implementation 'io.github.andrestubbe:fastXXX:1.0.0'
+    implementation 'io.github.andrestubbe:fastcore:1.0.0'
 }
 ```
 
@@ -71,22 +82,20 @@ dependencies {
 ## Project Structure
 
 ```
-fastXXX/
+fastcore/
 ├── .github/                    # GitHub workflows
 │   └── workflows/
 │       └── build.yml           # CI build & test
-├── docs/                       # 📸 Screenshots, GIFs, images
-├── examples/                   # ⭐ Standalone usage examples
-│   └── 00-basic-usage/         # ⬅️ START HERE - Hello World
+├── docs/                       # Documentation assets
+├── examples/                   # ⭐ Usage examples
+│   └── 00-basic-usage/         # Platform detection demo
 │       ├── pom.xml             # Own Maven config
 │       └── src/main/java/...   # Example code
-├── native/                     # C/C++ JNI source (if needed)
-│   ├── fastXXX.cpp            # Native implementation
-│   ├── fastXXX.h              # Header file
-│   └── kernels/               # OpenCL kernels (optional)
 ├── src/
-│   └── main/java/fastXXX/     # Main library code
-├── compile.bat                 # Native build script
+│   └── main/java/fastcore/     # Main library code
+│       ├── FastCore.java       # Main API
+│       ├── LibraryLoader.java  # Native library loader
+│       └── Platform.java       # OS/Arch detection
 ├── pom.xml                     # Maven configuration
 ├── LICENSE                     # MIT License
 ├── .gitignore                  # Git ignore rules
@@ -113,25 +122,20 @@ fastXXX/
 ## Building from Source
 
 ### Prerequisites
-- JDK 17+
+- JDK 25+
 - Maven 3.9+
-- Visual Studio 2019+ (for JNI projects)
 
 ### Build Commands
 
 ```bash
-# Standard Maven project
-mvn clean package
-
-# With native components
-compile.bat
+# Standard Maven project (pure Java, no native build needed)
 mvn clean package
 
 # Skip tests (fast build)
 mvn clean package -DskipTests
 
-# Run benchmarks
-mvn test-compile exec:java -Dexec.mainClass="fastXXX.Benchmark"
+# Show platform info
+mvn compile exec:java
 
 # Run example (separate mini-project)
 cd examples/00-basic-usage
@@ -145,7 +149,7 @@ All runnable code (demos, examples) is in `examples/` - **never in `src/main/jav
 The `src/main/java` folder contains **only API/library code** that users import and use.
 
 ```bash
-# Basic usage example (START HERE) - contains Demo.java
+# Basic usage example - Platform detection demo
 cd examples/00-basic-usage
 mvn compile exec:java
 
@@ -155,10 +159,9 @@ cp -r examples/00-basic-usage examples/10-my-advanced-example
 ```
 
 **Naming convention for examples:**
-- `00-*` - Basic/Hello World examples (contains Demo.java)
+- `00-*` - Basic usage examples
 - `10-*` - Advanced usage
-- `20-*` - UI demos
-- `30-*` - Native/integration examples
+- `20-*` - Integration examples (loading other libraries)
 
 ---
 
@@ -167,7 +170,6 @@ cp -r examples/00-basic-usage examples/10-my-advanced-example
 - [ ] Version updated in `pom.xml`
 - [ ] `CHANGELOG.md` updated
 - [ ] All tests passing: `mvn clean test`
-- [ ] Native libs built (if applicable)
 - [ ] Git tag created: `git tag -a v1.0.0 -m "Release 1.0.0"`
 - [ ] GitHub Release created
 - [ ] Maven Central deployed: `mvn clean deploy -P release`
@@ -177,6 +179,32 @@ cp -r examples/00-basic-usage examples/10-my-advanced-example
 ## License
 
 MIT License — See [LICENSE](LICENSE) for details.
+
+---
+
+---
+
+## Usage Example
+
+```java
+import fastcore.FastCore;
+
+public class MyApp {
+    public static void main(String[] args) {
+        // Load a native library (e.g., fastrobot.dll, libfastrobot.so, libfastrobot.dylib)
+        FastCore.loadLibrary("fastrobot");
+        
+        // Check platform
+        if (FastCore.isWindows()) {
+            System.out.println("Running on Windows");
+        }
+        
+        // Get platform info
+        System.out.println(FastCore.getPlatformInfo());
+        // Output: OS: WINDOWS (windows 11), Arch: X86_64, Java: 25.0.1
+    }
+}
+```
 
 ---
 
