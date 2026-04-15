@@ -1,8 +1,8 @@
 # FastCore — Unified JNI Loader
 
-> **Cross-platform native library loading** for Java 25+ — Windows, Linux, macOS
+> **Cross-platform native library loading** for Java 17+ — Windows, Linux, macOS
 
-[![Java](https://img.shields.io/badge/Java-25+-blue.svg)](https://www.java.com)
+[![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
 [![Maven](https://img.shields.io/badge/Maven-3.9+-orange.svg)](https://maven.apache.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
