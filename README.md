@@ -1,4 +1,4 @@
-# FastCore — Unified JNI Loader
+# FastCore — Unified JNI loader for Java native libraries
 
 > **Cross-platform native library loading** for Java 17+ — Windows, Linux, macOS
 
