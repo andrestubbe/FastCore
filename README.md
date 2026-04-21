@@ -74,9 +74,11 @@ dependencies {
 }
 ```
 
-## Building
+### Direct Download
 
-See [COMPILE.md](COMPILE.md) for build instructions.
+Download JAR from [Releases](https://github.com/andrestubbe/FastCore/releases)
+
+**Zero Dependencies:** Pure Java, cross-platform native library loader.
 
 ---
 
