@@ -40,16 +40,8 @@ System.out.println(FastCore.getPlatformInfo());
 
 ## Installation
 
-### Direct Download (No Maven Required)
+### Maven (JitPack)
 
-Download the latest JAR directly:
-- [fastcore-1.0.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v1.0.0/fastcore-1.0.0.jar)
-
-Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/releases)
-
-### JitPack (for Maven/Gradle projects)
-
-**Maven:**
 ```xml
 <repositories>
     <repository>
@@ -65,7 +57,8 @@ Browse all releases: [Releases page](https://github.com/andrestubbe/FastCore/rel
 </dependency>
 ```
 
-**Gradle:**
+### Gradle (JitPack)
+
 ```groovy
 repositories {
     maven { url 'https://jitpack.io' }
@@ -75,12 +68,6 @@ dependencies {
     implementation 'com.github.andrestubbe:fastcore:v1.0.0'
 }
 ```
-
-### Direct Download
-
-Download JAR from [Releases](https://github.com/andrestubbe/FastCore/releases)
-
-**Zero Dependencies:** Pure Java, cross-platform native library loader.
 
 ---
 
