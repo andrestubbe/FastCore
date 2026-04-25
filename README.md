@@ -6,6 +6,8 @@
 [![Maven](https://img.shields.io/badge/Maven-3.9+-orange.svg)](https://maven.apache.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![Demo Screenshot](docs/demo-screenshot.png)
+
 ---
 
 ## Quick Start
