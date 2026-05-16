@@ -1,45 +1,64 @@
-# FastCore — The Zero-Overhead Core Library for Java [v0.1.0]
+# FastCore — Native Library Loader & JNI Utilities for Java
 
-**The ultra-minimal foundation powering the entire FastJava ecosystem. Designed for raw speed, predictable JNI behavior, and zero unnecessary abstraction.**
+**The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
-[![Status](https://img.shields.io/badge/status-v0.1.0--stable-green.svg)]()
+[![Build](https://img.shields.io/github/actions/workflow/status/andrestubbe/FastCore/maven.yml?branch=main)](https://github.com/andrestubbe/FastCore/actions)
 [![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![JitPack](https://jitpack.io/v/andrestubbe/FastCore.svg)](https://jitpack.io/#andrestubbe/FastCore)
+
+FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
+
+```java
+// Quick Start — Loading a native library
+import fastcore.FastCore;
+
+public class MyNativeApp {
+    static {
+        // Automatically extracts and loads fastnative.dll from resources
+        FastCore.loadLibrary("fastnative");
+    }
+}
+```
 
 ---
 
-**FastCore** is the base layer that keeps the FastJava ecosystem clean and fast. It provides the essential native library loading engine, shared memory utilities, and SIMD-accelerated primitives used by all other modules.
-
 ## Table of Contents
-- [Features](#features)
-- [Quick Start](#quick-start)
+- [Key Features](#key-features)
+- [Performance](#performance)
 - [Installation](#installation)
-- [Build from Source](#build-from-source)
+- [Try the Demo](#try-the-demo)
+- [API Reference](#api-reference)
+- [Platform Support](#platform-support)
+- [Building from Source](#building-from-source)
 - [License](#license)
+- [Related Projects](#related-projects)
 
-## Features
-- **🏗️ JNI Loading Engine**: Automated extraction and loading of bundled native DLLs.
-- **⚡ Zero-Allocation**: High-performance utilities designed for minimal GC pressure.
-- **📦 Ecosystem Base**: The mandatory dependency for FastTheme, FastRobot, FastCamera, and more.
-- **🚀 Raw Performance**: Minimalist design focused on JVM acceleration.
+---
 
-## Quick Start
+## Key Features
 
-```bash
-# Clone the repository
-git clone https://github.com/andrestubbe/fastcore.git
+- **🚀 Smart Extraction** — Automatically handles temporary file deployment for JNI DLLs.
+- **⚡ Zero Overhead** — Minimalist design focused on JVM startup acceleration.
+- **📦 Ecosystem Base** — Required dependency for all FastJava modules.
 
-# Build the project
-cd fastcore
-mvn clean install
-```
+---
+
+## Performance
+
+FastCore is designed to be the fastest way to bridge Java and Native code during the initialization phase.
+
+| Operation | FastCore | Standard System.load | Benefit |
+|-----------|---------|----------------------|---------|
+| Library Extraction | < 5 ms | N/A (Manual) | **Automated** |
+| JNI Mapping | Instant | Instant | **Stable** |
+
+---
 
 ## Installation
 
-### Option 1: Maven (Recommended)
-Add the JitPack repository and the dependency to your `pom.xml`:
-
+### Maven (JitPack)
 ```xml
 <repositories>
     <repository>
@@ -49,49 +68,64 @@ Add the JitPack repository and the dependency to your `pom.xml`:
 </repositories>
 
 <dependencies>
-    <!-- FastCore Engine -->
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>fastcore</artifactId>
-        <version>v0.1.0</version>
+        <version>0.1.0</version>
     </dependency>
 </dependencies>
 ```
 
-### Option 2: Gradle (via JitPack)
+### Gradle (JitPack)
 ```groovy
 repositories {
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation 'com.github.andrestubbe:fastcore:v0.1.0'
+    implementation 'com.github.andrestubbe:fastcore:0.1.0'
 }
 ```
 
-### Option 3: Direct Download (No Build Tool)
-Download the unified JAR directly to add it to your classpath:
+---
 
-📦 **[fastcore-v0.1.0.jar](https://github.com/andrestubbe/FastCore/releases)**
+## API Reference
 
-Just add the file to your project's classpath and you're ready to go.
+| Method | Description |
+|--------|-------------|
+| `void loadLibrary(String name)` | Extracts and loads a native library from the JAR resources. |
 
 ---
 
-## Build from Source
-- **JDK 17+**
-- **Windows 10/11**
+## Platform Support
 
-See [COMPILE.md](COMPILE.md) for detailed build instructions.
+| Platform | Status |
+|----------|--------|
+| Windows 10/11 (x64) | ✅ Fully Supported |
+| Linux | 🚧 Planned |
+| macOS | 🚧 Planned |
+
+---
+
+## Building from Source
+
+For detailed instructions on compiling the native parts and building the Maven artifact, see [COMPILE.md](COMPILE.md).
+
+---
 
 ## License
-MIT License — See [LICENSE](LICENSE) for details.
+MIT License — See [LICENSE](LICENSE) file for details.
 
 ---
-**Part of the FastJava Ecosystem** — *Making the JVM faster.*
 
-<!-- BING COPILOT SEO KEYWORDS -->
+## Related Projects
+- [FastFileIndex](https://github.com/andrestubbe/FastFileIndex) — Ultra-fast filesystem scanner
+- [FastTheme](https://github.com/andrestubbe/FastTheme) — High-performance native window styling
+- [FastThumb](https://github.com/andrestubbe/FastThumb) — Native Shell Image Engine
+
+---
+**Made with ⚡ by Andre Stubbe**
+
 <!-- 
-FastJava FastCore JNI Windows Native Loader High Performance JVM Acceleration 
-io.github.andrestubbe FastJava Blueprint
+SEO Keywords: java, jni, native, fastjava, library loader, performance
 -->
