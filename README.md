@@ -1,8 +1,8 @@
-# FastCore — Native Library Loader & JNI Utilities for Java
+# FastCore — Native Library Loader & JNI Utilities for Java [v0.1.0]
 
 **The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
-[![Build](https://img.shields.io/github/actions/workflow/status/andrestubbe/FastCore/maven.yml?branch=main)](https://github.com/andrestubbe/FastCore/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/andrestubbe/FastCore/build.yml?branch=main)](https://github.com/andrestubbe/FastCore/actions)
 [![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
