@@ -1,4 +1,4 @@
-﻿# FastCore â€” Native Library Loader & JNI Utilities for Java [v0.1.0]
+﻿# FastCore — Native Library Loader & JNI Utilities for Java [v0.1.0]
 
 **The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
@@ -11,7 +11,7 @@
 FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
 
 ```java
-// Quick Start â€” Loading a native library
+// Quick Start — Loading a native library
 import fastcore.FastCore;
 
 public class MyNativeApp {
@@ -39,9 +39,9 @@ public class MyNativeApp {
 
 ## Key Features
 
-- **ðŸš€ Smart Extraction** â€” Automatically handles temporary file deployment for JNI DLLs.
-- **âš¡ Zero Overhead** â€” Minimalist design focused on JVM startup acceleration.
-- **ðŸ“¦ Ecosystem Base** â€” Required dependency for all FastJava modules.
+- **🚀 Smart Extraction** — Automatically handles temporary file deployment for JNI DLLs.
+- **⚡ Zero Overhead** — Minimalist design focused on JVM startup acceleration.
+- **📦 Ecosystem Base** — Required dependency for all FastJava modules.
 
 ---
 
@@ -108,9 +108,9 @@ Download the latest JARs directly to add them to your classpath:
 
 | Platform | Status |
 |----------|--------|
-| Windows 10/11 (x64) | âœ… Fully Supported |
-| Linux | ðŸš§ Planned |
-| macOS | ðŸš§ Planned |
+| Windows 10/11 (x64) | ✅ Fully Supported |
+| Linux | 🚧 Planned |
+| macOS | 🚧 Planned |
 
 ---
 
@@ -121,17 +121,17 @@ For detailed instructions on compiling the native parts and building the Maven a
 ---
 
 ## License
-MIT License â€” See [LICENSE](LICENSE) file for details.
+MIT License — See [LICENSE](LICENSE) file for details.
 
 ---
 
 ## Related Projects
-- [FastFileIndex](https://github.com/andrestubbe/FastFileIndex) â€” Ultra-fast filesystem scanner
-- [FastTheme](https://github.com/andrestubbe/FastTheme) â€” High-performance native window styling
-- [FastThumb](https://github.com/andrestubbe/FastThumb) â€” Native Shell Image Engine
+- [FastFileIndex](https://github.com/andrestubbe/FastFileIndex) — Ultra-fast filesystem scanner
+- [FastTheme](https://github.com/andrestubbe/FastTheme) — High-performance native window styling
+- [FastThumb](https://github.com/andrestubbe/FastThumb) — Native Shell Image Engine
 
 ---
-**Made with âš¡ by Andre Stubbe**
+**Made with ⚡ by Andre Stubbe**
 
 <!-- 
 SEO Keywords: java, jni, native, fastjava, library loader, performance
