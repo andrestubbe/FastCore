@@ -2,12 +2,6 @@
 
 **The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
-[![Build](https://img.shields.io/github/actions/workflow/status/andrestubbe/FastCore/build.yml?branch=main)](https://github.com/andrestubbe/FastCore/actions)
-[![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![JitPack](https://jitpack.io/v/andrestubbe/FastCore.svg)](https://jitpack.io/#andrestubbe/FastCore)
-
 FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
 
 ```java
@@ -21,6 +15,12 @@ public class MyNativeApp {
     }
 }
 ```
+
+[![Status](https://img.shields.io/badge/status-v0.1.0-brightgreen.svg)](https://github.com/andrestubbe/FastCore/releases/tag/v0.1.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
+[![JitPack](https://img.shields.io/badge/JitPack-ready-green.svg)](https://jitpack.io/#andrestubbe)
 
 ---
 
