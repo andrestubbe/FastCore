@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
 [![JitPack](https://img.shields.io/badge/JitPack-ready-green.svg)](https://jitpack.io/#andrestubbe)
 
-**The ultra-minimal foundation powering the entire FastJava ecosystem.**
+**⚡ The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
 FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures
 that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
@@ -113,19 +113,22 @@ Download the latest JARs directly to add them to your classpath:
 
 ---
 
-## Platform Support
+## Documentation
 
-| Platform            | Status            |
-|---------------------|-------------------|
-| Windows 10/11 (x64) | ✅ Fully Supported |
-| Linux               | 🚧 Planned        |
-| macOS               | 🚧 Planned        |
+* **[COMPILE.md](COMPILE.md)**: Full compilation guide (MSVC C++17 build chain + JNI Setup).
+* **[REFERENCE.md](REFERENCE.md)**: Full API descriptions, border configurations, and codepoint index.
+* **[PHILOSOPHIE.md](PHILOSOPHIE.md)**: The engineering rationale for zero-allocation performance.
+* **[ROADMAP.md](ROADMAP.md)**: Future milestones and planned features.
 
 ---
 
-## Building from Source
+## Platform Support
 
-For detailed instructions on compiling the native parts and building the Maven artifact, see [COMPILE.md](COMPILE.md).
+| Platform      | Status            |
+|---------------|-------------------|
+| Windows 10/11 | ✅ Fully Supported |
+| Linux         | 🚧 Planned        |
+| macOS         | 🚧 Planned        |
 
 ---
 
@@ -137,13 +140,11 @@ MIT License — See [LICENSE](LICENSE) file for details.
 
 ## Related Projects
 
-- [FastFileIndex](https://github.com/andrestubbe/FastFileIndex) — Ultra-fast filesystem scanner
-- [FastTheme](https://github.com/andrestubbe/FastTheme) — High-performance native window styling
-- [FastThumb](https://github.com/andrestubbe/FastThumb) — Native Shell Image Engine
+- [FastFileIndex](https://github.com/andrestubbe/FastFileIndex) - Binary file indexing with mmap support
+- [FastFileSearch](https://github.com/andrestubbe/FastFileSearch) - Prefix Trie, N-Gram index, and Ranking engine
+- [FastFileWatch](https://github.com/andrestubbe/FastFileWatch) - USN Journal-based live file monitoring
+- [FastCore](https://github.com/andrestubbe/FastCore) - Unified JNI loader and platform abstraction
 
 ---
-**Made with ⚡ by Andre Stubbe**
 
-<!-- 
-SEO Keywords: java, jni, native, fastjava, library loader, performance
--->
+**Part of the FastJava Ecosystem** — *Making the JVM faster. Small package. Maximum speed. Zero bloat. 🚀📋*
