@@ -13,19 +13,6 @@ that bundled DLLs are safely deployed and loaded across different environments w
 
 [![FastFileIndex Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
 
-```java
-// Quick Start — Loading a native library
-
-import fastcore.FastCore;
-
-public class MyNativeApp {
-    static {
-        // Automatically extracts and loads fastnative.dll from resources
-        FastCore.loadLibrary("fastnative");
-    }
-}
-```
-
 ---
 
 ## Table of Contents
@@ -39,6 +26,21 @@ public class MyNativeApp {
 - [Building from Source](#building-from-source)
 - [License](#license)
 - [Related Projects](#related-projects)
+
+---
+
+```java
+// Quick Start — Loading a native library
+
+import fastcore.FastCore;
+
+public class MyNativeApp {
+    static {
+        // Automatically extracts and loads fastnative.dll from resources
+        FastCore.loadLibrary("fastnative");
+    }
+}
+```
 
 ---
 
@@ -68,21 +70,18 @@ FastCore is designed to be the fastest way to bridge Java and Native code during
 Add the JitPack repository and the dependencies to your `pom.xml`:
 
 ```xml
-
 <repositories>
     <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
-
 <dependencies>
-<!-- FastCore Library -->
-<dependency>
-    <groupId>com.github.andrestubbe</groupId>
-    <artifactId>fastcore</artifactId>
-    <version>v0.1.0</version>
-</dependency>
+   <dependency>
+       <groupId>com.github.andrestubbe</groupId>
+       <artifactId>fastcore</artifactId>
+       <version>v0.1.0</version>
+   </dependency>
 </dependencies>
 ```
 
@@ -92,7 +91,6 @@ Add the JitPack repository and the dependencies to your `pom.xml`:
 repositories {
     maven { url 'https://jitpack.io' }
 }
-
 dependencies {
     implementation 'com.github.andrestubbe:fastcore:v0.1.0'
 }
@@ -104,6 +102,8 @@ Download the latest JARs directly to add them to your classpath:
 
 1. 📦 **[fastcore-v0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v0.1.0/fastcore-v0.1.0.jar)** (
    The Core Library)
+
+---
 
 ## API Reference
 
