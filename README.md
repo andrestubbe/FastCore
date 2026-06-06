@@ -1,6 +1,6 @@
-# FastCore v0.1.0 [ALPHA] � Native Library Loader & JNI Utilities for Java
+# FastCore 0.1.0 [ALPHA]  Native Library Loader & JNI Utilities for Java
 
-[![Status](https://img.shields.io/badge/status-v0.1.0-brightgreen.svg)](https://github.com/andrestubbe/FastCore/releases/tag/v0.1.0)
+[![Status](https://img.shields.io/badge/status-0.1.0-brightgreen.svg)](https://github.com/andrestubbe/FastCore/releases/tag/0.1.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://www.java.com)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
@@ -30,7 +30,7 @@ that bundled DLLs are safely deployed and loaded across different environments w
 ---
 
 ```java
-// Quick Start � Loading a native library
+// Quick Start  Loading a native library
 
 import fastcore.FastCore;
 
@@ -46,9 +46,9 @@ public class MyNativeApp {
 
 ## Key Features
 
-- **?? Smart Extraction** � Automatically handles temporary file deployment for JNI DLLs.
-- **? Zero Overhead** � Minimalist design focused on JVM startup acceleration.
-- **?? Ecosystem Base** � Required dependency for all FastJava modules.
+- **ðŸš€ Smart Extraction**  Automatically handles temporary file deployment for JNI DLLs.
+- **? Zero Overhead**  Minimalist design focused on JVM startup acceleration.
+- **ðŸš€ Ecosystem Base**  Required dependency for all FastJava modules.
 
 ---
 
@@ -80,7 +80,7 @@ Add the JitPack repository and the dependencies to your `pom.xml`:
    <dependency>
        <groupId>com.github.andrestubbe</groupId>
        <artifactId>fastcore</artifactId>
-       <version>v0.1.0</version>
+       <version>0.1.0</version>
    </dependency>
 </dependencies>
 ```
@@ -92,7 +92,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    implementation 'com.github.andrestubbe:fastcore:v0.1.0'
+    implementation 'com.github.andrestubbe:fastcore:0.1.0'
 }
 ```
 
@@ -100,7 +100,7 @@ dependencies {
 
 Download the latest JARs directly to add them to your classpath:
 
-1. ?? **[fastcore-v0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/v0.1.0/fastcore-v0.1.0.jar)** (
+1. ðŸš€ **[fastcore-0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.0/fastcore-0.1.0.jar)** (
    The Core Library)
 
 ---
@@ -127,14 +127,14 @@ Download the latest JARs directly to add them to your classpath:
 | Platform      | Status            |
 |---------------|-------------------|
 | Windows 10/11 | ? Fully Supported |
-| Linux         | ?? Planned        |
-| macOS         | ?? Planned        |
+| Linux         | ðŸš€ Planned        |
+| macOS         | ðŸš€ Planned        |
 
 ---
 
 ## License
 
-MIT License � See [LICENSE](LICENSE) file for details.
+MIT License  See [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -147,4 +147,4 @@ MIT License � See [LICENSE](LICENSE) file for details.
 
 ---
 
-**Part of the FastJava Ecosystem** � *Making the JVM faster. Small package. Maximum speed. Zero bloat. ????*
+**Part of the FastJava Ecosystem**  *Making the JVM faster. Small package. Maximum speed. Zero bloat. ðŸš€ðŸš€*
