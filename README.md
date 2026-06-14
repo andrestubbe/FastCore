@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
 [![JitPack](https://img.shields.io/badge/JitPack-ready-green.svg)](https://jitpack.io/#andrestubbe/FastCore)
 
-**? The ultra-minimal foundation powering the entire FastJava ecosystem.**
+**⚙️ The ultra-minimal foundation powering the entire FastJava ecosystem.**
 
 FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures
 that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
@@ -46,9 +46,9 @@ public class MyNativeApp {
 
 ## Key Features
 
-- **ðŸš€ Smart Extraction**  Automatically handles temporary file deployment for JNI DLLs.
-- **? Zero Overhead**  Minimalist design focused on JVM startup acceleration.
-- **ðŸš€ Ecosystem Base**  Required dependency for all FastJava modules.
+- **📥 Smart Extraction**: Automatically handles temporary file deployment for JNI DLLs.
+- **⏱️ Zero Overhead**: Minimalist design focused on JVM startup acceleration.
+- **🔗 Ecosystem Base**: Required dependency for all FastJava modules.
 
 ---
 
@@ -100,8 +100,7 @@ dependencies {
 
 Download the latest JARs directly to add them to your classpath:
 
-1. ðŸš€ **[fastcore-0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.0/fastcore-0.1.0.jar)** (
-   The Core Library)
+1. 📦 **[fastcore-0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.0/fastcore-0.1.0.jar)** (The Core Library)
 
 ---
 
@@ -126,9 +125,9 @@ Download the latest JARs directly to add them to your classpath:
 
 | Platform      | Status            |
 |---------------|-------------------|
-| Windows 10/11 | ? Fully Supported |
-| Linux         | ðŸš€ Planned        |
-| macOS         | ðŸš€ Planned        |
+| Windows 10/11 | ✅ Fully Supported |
+| Linux         | 🔗 Planned        |
+| macOS         | 🔗 Planned        |
 
 ---
 
@@ -147,4 +146,4 @@ MIT License  See [LICENSE](LICENSE) file for details.
 
 ---
 
-**Part of the FastJava Ecosystem**  *Making the JVM faster. Small package. Maximum speed. Zero bloat. ðŸš€ðŸš€*
+**Part of the FastJava Ecosystem** — *Making the JVM faster. Small package. Maximum speed. Zero bloat. 🚀📋*
