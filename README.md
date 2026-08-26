@@ -13,10 +13,28 @@ that bundled DLLs are safely deployed and loaded across different environments w
 
 [![FastFileIndex Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
 
+## Quick Start
+
+```java
+import fastcore.FastCore;
+
+public class Demo {
+    static {
+        // Automatically extracts and loads fastnative.dll from resources
+        FastCore.loadLibrary("fastnative");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("FastCore native loader initialized successfully.");
+    }
+}
+```
+
 ---
 
 ## Table of Contents
 
+- [Quick Start](#quick-start)
 - [Key Features](#key-features)
 - [Performance](#performance)
 - [Installation](#installation)
@@ -26,21 +44,6 @@ that bundled DLLs are safely deployed and loaded across different environments w
 - [Building from Source](#building-from-source)
 - [License](#license)
 - [Related Projects](#related-projects)
-
----
-
-```java
-// Quick Start  Loading a native library
-
-import fastcore.FastCore;
-
-public class MyNativeApp {
-    static {
-        // Automatically extracts and loads fastnative.dll from resources
-        FastCore.loadLibrary("fastnative");
-    }
-}
-```
 
 ---
 
