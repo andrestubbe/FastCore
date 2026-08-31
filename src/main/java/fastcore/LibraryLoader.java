@@ -52,8 +52,9 @@ public final class LibraryLoader {
         String fileName = Platform.getLibraryFileName(libraryName);
         String resourcePath = Platform.getLibraryResourcePath(libraryName);
         
-        Path tempDir = Files.createTempDirectory("fastcore-" + libraryName + "-");
-        File libraryFile = tempDir.resolve(fileName).toFile();
+        Path cacheDir = Path.of(System.getProperty("user.home", "."), ".fastcore", "native", libraryName);
+        Files.createDirectories(cacheDir);
+        File libraryFile = cacheDir.resolve(fileName).toFile();
         
         InputStream in = null;
         if (contextClass != null) {
@@ -86,19 +87,7 @@ public final class LibraryLoader {
             libraryFile.setExecutable(true);
         }
         
-        registerCleanupHook(libraryName, libraryFile, tempDir);
-        
         return libraryFile.getAbsolutePath();
-    }
-    
-    private static void registerCleanupHook(String libraryName, File libraryFile, Path tempDir) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            try {
-                Files.deleteIfExists(libraryFile.toPath());
-                Files.deleteIfExists(tempDir);
-            } catch (Exception e) {
-            }
-        }, "fastcore-cleanup-" + libraryName));
     }
     
     public static void clearCache() {
