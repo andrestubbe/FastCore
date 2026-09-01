@@ -74,19 +74,25 @@ public final class LibraryLoader {
             throw new RuntimeException("Native library not found in classpath: " + resourcePath);
         }
 
-        try (InputStream inToUse = in;
-             FileOutputStream out = new FileOutputStream(libraryFile)) {
-            byte[] buffer = new byte[8192];
-            int read;
-            while ((read = inToUse.read(buffer)) != -1) {
-                out.write(buffer, 0, read);
+        // Only extract if the file does not already exist in cache.
+        // This prevents WDAC / Defender from blocking a freshly overwritten DLL.
+        if (!libraryFile.exists()) {
+            try (InputStream inToUse = in;
+                 FileOutputStream out = new FileOutputStream(libraryFile)) {
+                byte[] buffer = new byte[8192];
+                int read;
+                while ((read = inToUse.read(buffer)) != -1) {
+                    out.write(buffer, 0, read);
+                }
             }
+        } else {
+            in.close();
         }
-        
+
         if (!Platform.isWindows()) {
             libraryFile.setExecutable(true);
         }
-        
+
         return libraryFile.getAbsolutePath();
     }
     
