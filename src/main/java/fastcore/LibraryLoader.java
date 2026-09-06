@@ -26,17 +26,47 @@ public final class LibraryLoader {
         
         Platform.validatePlatform();
         
+        // Priority 1: Check local application directory and common native subfolders
+        String fileName = Platform.getLibraryFileName(libraryName);
+        String[] candidateDirs = {
+            System.getProperty("app.dir"),
+            System.getProperty("fastjava.native.dir"),
+            ".",
+            "dll",
+            "bin",
+            "native"
+        };
+
+        for (String dir : candidateDirs) {
+            if (dir != null && !dir.isBlank()) {
+                File candidate = Path.of(dir, fileName).toFile();
+                if (candidate.exists() && candidate.isFile()) {
+                    try {
+                        System.load(candidate.getAbsolutePath());
+                        loadedLibraries.put(libraryName, true);
+                        return;
+                    } catch (Throwable ignored) {
+                        // Fallthrough to next candidate or standard loading
+                    }
+                }
+            }
+        }
+
+        // Priority 2: System library path (java.library.path / PATH)
         try {
             System.loadLibrary(libraryName);
             loadedLibraries.put(libraryName, true);
-        } catch (UnsatisfiedLinkError e1) {
-            try {
-                String libraryPath = extractLibrary(libraryName, contextClass);
-                System.load(libraryPath);
-                loadedLibraries.put(libraryName, true);
-            } catch (Exception e2) {
-                throw new UnsatisfiedLinkError("Failed to load native library '" + libraryName + "': " + e2.getMessage());
-            }
+            return;
+        } catch (UnsatisfiedLinkError ignored) {
+        }
+
+        // Priority 3: Fallback extraction from JAR classpath into user cache
+        try {
+            String libraryPath = extractLibrary(libraryName, contextClass);
+            System.load(libraryPath);
+            loadedLibraries.put(libraryName, true);
+        } catch (Exception e2) {
+            throw new UnsatisfiedLinkError("Failed to load native library '" + libraryName + "': " + e2.getMessage());
         }
     }
     
