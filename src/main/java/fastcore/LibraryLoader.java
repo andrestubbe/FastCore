@@ -126,6 +126,34 @@ public final class LibraryLoader {
         return libraryFile.getAbsolutePath();
     }
     
+    /**
+     * Resolves or extracts the library file on the filesystem without calling System.load.
+     * Useful for FFM SymbolLookup.libraryLookup.
+     */
+    public static synchronized String resolveLibraryPath(String libraryName, Class<?> contextClass) throws Exception {
+        Platform.validatePlatform();
+        String fileName = Platform.getLibraryFileName(libraryName);
+        String[] candidateDirs = {
+            System.getProperty("app.dir"),
+            System.getProperty("fastjava.native.dir"),
+            ".",
+            "dll",
+            "bin",
+            "native"
+        };
+
+        for (String dir : candidateDirs) {
+            if (dir != null && !dir.isBlank()) {
+                File candidate = Path.of(dir, fileName).toFile();
+                if (candidate.exists() && candidate.isFile()) {
+                    return candidate.getAbsolutePath();
+                }
+            }
+        }
+
+        return extractLibrary(libraryName, contextClass);
+    }
+
     public static void clearCache() {
         loadedLibraries.clear();
     }

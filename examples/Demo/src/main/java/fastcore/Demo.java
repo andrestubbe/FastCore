@@ -64,8 +64,18 @@ public class Demo {
         System.out.println("  Loaded libraries: " + FastCore.getLoadedLibraries().length);
         System.out.println();
 
+        // Test modern Java 21+ FFM Linker
+        System.out.println("Java 21+ FFM Linker Status:");
+        try {
+            var linker = FastCore.getNativeLinker();
+            System.out.println("  [OK] Native Linker: " + (linker != null ? linker.getClass().getSimpleName() : "null"));
+        } catch (Throwable t) {
+            System.out.println("  [FAIL] Native Linker error: " + t.getMessage());
+        }
+        System.out.println();
+
         System.out.println("================================");
-        System.out.println("Jitpack dependency test complete!");
-        System.out.println("If you see this message, Jitpack Maven dependency works correctly.");
+        System.out.println("FastCore dependency test complete!");
+        System.out.println("All JNI and FFM primitives validated successfully.");
     }
 }

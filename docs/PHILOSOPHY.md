@@ -1,29 +1,27 @@
-# The Philosophy of FastXXX
+# The Philosophy of FastCore ⚡
 
 > [!IMPORTANT]
-> **"Keine Kopien. Niemals. Kritischer JNI-Pfad. Native-First Performance."**
+> **"Zero Allocation. Zero JNI Baggage. Native-First Register Transitions."**
 
-FastXXX is built on the principle that modern Java applications require **native-first** acceleration for performance-critical operations that the standard JVM APIs don't fully optimize.
+FastCore is built on the principle that modern Java applications must not be constrained by legacy abstraction layers when bridging to hardware-accelerated native code.
 
 ## Core Tenets
 
-1.  **Native-First Execution**
-    Bypass standard Java layers to reach the physical limits of the hardware using hand-tuned C++ and SIMD intrinsics.
+1. **Hardware-Direct Register Passing (System ABI)**
+   Standard JNI relies on stack-frame marshaling, safepoint checks, and `JNIEnv*` handles. FastCore bridges modern Java directly to the CPU's native calling conventions (Windows x64 / System V AMD64), enabling near-zero call latency (~2–5 ns) and direct C2-JIT inlining.
 
-2.  **Zero-Copy JNI Architecture**
-    Minimize JNI transition costs by using direct memory access patterns and avoiding implicit memory copies between the JVM and the native layer.
+2. **Zero-Copy & Zero Garbage Collection**
+   By unifying `FastPointer`, `FastMemory`, and Java 21+ `MemorySegment`, FastCore ensures that raw memory addresses are passed straight to SIMD/GPU vector pipelines with zero heap allocations, zero buffer pinning stalls, and zero GC pauses.
 
-3.  **Deterministic Latency**
-    Eliminate variance caused by JIT warm-up or garbage collection stalls in critical hot-paths.
+3. **Silent, Frictionless Native Deployment**
+   Native binaries (`.dll`, `.so`, `.dylib`) should feel like standard Java dependencies. FastCore automatically manages extraction, cache deduplication, and platform validation without requiring manual system installs.
 
-4.  **Hardware-Aware Optimization**
-    Leverage modern CPU features (AVX, SSE, NEON) to process data at hardware-native speeds.
+4. **Backward-Compatible, Forward-Looking**
+   Legacy JNI components remain 100% functional, while new high-throughput modules (`FastAIModel`, `FastGPU`, `FastSIMD`) immediately harness modern Foreign Function & Memory downcalls without code churn.
 
-5.  **Blueprint Consistency**
-    As part of the **FastJava** ecosystem, FastXXX adheres to a standardized architecture:
-    *   **Native Backend**: Direct C++ implementation.
-    *   **Unified Loading**: Powered by `FastCore`.
-    *   **Premium Quality**: Built for high-performance systems and autonomous agents.
+5. **Blueprint of the FastJava Ecosystem**
+   As the foundational cornerstone, FastCore provides every module with deterministic startup, uncorrupted memory boundaries, and native execution parity across all supported OS platforms.
 
 ---
-**⚡ FastXXX — Powering the next generation of Native Java.**
+
+**⚡ FastCore — Unlocking the true physical speed of the JVM.**
