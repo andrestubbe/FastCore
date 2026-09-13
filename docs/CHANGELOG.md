@@ -12,8 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - `FastCore.loadNativeLookup()` for registering off-heap native library symbols.
   - `FastCore.lookupFunction()` producing zero-overhead, inlinable `MethodHandle` instances.
   - `FastCore.asMemorySegment()` for zero-copy conversion of 64-bit native pointers (e.g. `FastPointer`).
-- **Filesystem Path Resolution**:
+- **Filesystem Path Resolution & Local Probing**:
   - `LibraryLoader.resolveLibraryPath()` to locate or extract native DLLs without forcing `System.load`.
+  - Added multi-tier local folder candidate probing (`app.dir`, `fastjava.native.dir`, `.`, `dll`, `bin`, `native`) to prioritize developer DLLs before falling back to JAR extraction.
 - **Hero Demo & Automation**:
   - Standalone runner `run-demo.bat` for quick verification.
   - Enhanced `Demo.java` testing both traditional JNI and Java 21+ FFM Linkers.

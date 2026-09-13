@@ -14,7 +14,7 @@
 
 By eliminating legacy JNI marshaling overhead, FastCore allows Java applications to execute raw C/C++ SIMD kernels, GPU compute pipelines, and system routines at bare-metal speeds (~2–5 ns transition overhead) with zero heap allocations.
 
-[**Watch Showcase (YouTube)**](https://www.youtube.com/watch?v=BZsqQl7WqWk) | [**Watch the JMH Benchmark**](https://www.youtube.com/watch?v=BZsqQl7WqWk)
+[**Watch Showcase (YouTube)**](https://www.youtube.com/watch?v=BZsqQl7WqWk) | Watch JMH Benchmark (YouTube)
 
 [![Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
 
