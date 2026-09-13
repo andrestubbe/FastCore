@@ -70,8 +70,8 @@ public class JniDemo {
 - [Why FastCore?](#why-fastcore)
 - [Quick Start](#quick-start)
 - [Key Features](#key-features)
-- [Performance & JMH Benchmarks](#performance--jmh-benchmarks)
 - [Real-World Use Cases](#real-world-use-cases)
+- [Performance & JMH Benchmarks](#performance--jmh-benchmarks)
 - [FastJava Native Memory & Hardware Substrate](#fastjava-native-memory--hardware-substrate)
 - [API Quick Reference](#api-quick-reference)
 - [Installation](#installation)
@@ -109,6 +109,15 @@ Standard native integration in Java has historically been plagued by structural 
 
 ---
 
+## Real-World Use Cases
+
+- 🧠 **Local LLM Forward-Pass**: Used by `FastAIModel` to invoke AVX2/AVX-512 matrix-vector multiplication kernels hundreds of times per token without JNI overhead.
+- 🌋 **GPU Compute Buffers**: Bridges off-heap memory addresses directly to Vulkan / Direct3D compute shaders in `FastGPU`.
+- ⚡ **Vector Memory Scanning**: Connects `FastSIMD` to hardware vector registers for instant multi-gigabyte memory sweeps.
+- 📂 **High-Speed File Indexing & Watching**: Deploys native USN Journal monitor drivers in `FastFileWatch` and `FastFileIndex`.
+
+---
+
 ## Performance & JMH Benchmarks
 
 FastCore is rigorously benchmarked using **OpenJDK JMH** to guarantee zero-overhead execution:
@@ -130,15 +139,6 @@ Benchmark.benchmarkFfmLinkerQuery                 thrpt    3  541,209,881.0   op
 | **GC Safepoints** | **Zero Safepoint Check** | Safepoint Required | No GC stalls on other threads |
 | **Pointer Transfer** | **Direct Register (0 ns)** | JNI Array Pinning | True Zero-Copy |
 | **C/C++ API** | **Standard C (`extern "C"`)** | JNIEnv* Boilerplate | Direct link to `llama.cpp` / Vulkan |
-
----
-
-## Real-World Use Cases
-
-- 🧠 **Local LLM Forward-Pass**: Used by `FastAIModel` to invoke AVX2/AVX-512 matrix-vector multiplication kernels hundreds of times per token without JNI overhead.
-- 🌋 **GPU Compute Buffers**: Bridges off-heap memory addresses directly to Vulkan / Direct3D compute shaders in `FastGPU`.
-- ⚡ **Vector Memory Scanning**: Connects `FastSIMD` to hardware vector registers for instant multi-gigabyte memory sweeps.
-- 📂 **High-Speed File Indexing & Watching**: Deploys native USN Journal monitor drivers in `FastFileWatch` and `FastFileIndex`.
 
 ---
 
