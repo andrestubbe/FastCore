@@ -11,7 +11,9 @@
 FastCore provides the mandatory **native library extraction and loading engine** for the FastJava ecosystem. It ensures
 that bundled DLLs are safely deployed and loaded across different environments with zero overhead.
 
-[![FastFileIndex Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
+[**Watch Demo (YouTube)**](https://www.youtube.com/watch?v=BZsqQl7WqWk) | Watch JMH Benchmark (Youtube)
+
+[![Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
 
 ## Quick Start
 
