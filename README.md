@@ -14,7 +14,7 @@
 
 By eliminating legacy JNI marshaling overhead, FastCore allows Java applications to execute raw C/C++ SIMD kernels, GPU compute pipelines, and system routines at bare-metal speeds (~2–5 ns transition overhead) with zero heap allocations.
 
-[**Watch Showcase (YouTube)**](https://www.youtube.com/watch?v=BZsqQl7WqWk) | Watch JMH Benchmark (YouTube)
+[**Watch Demo (YouTube)**](https://www.youtube.com/watch?v=BZsqQl7WqWk) | Watch JMH Benchmark (YouTube)
 
 [![Showcase](docs/screenshot.png)](https://www.youtube.com/watch?v=BZsqQl7WqWk)
 
@@ -115,10 +115,10 @@ FastCore is rigorously benchmarked using **OpenJDK JMH** to guarantee zero-overh
 
 ```text
 Benchmark                                          Mode  Cnt          Score   Units
-JMH_FastCore.benchmarkPlatformDetection           thrpt    3  428,190,412.1   ops/s
-JMH_FastCore.benchmarkLibraryFileNameGeneration   thrpt    3   89,450,210.4   ops/s
-JMH_FastCore.benchmarkFfmMemorySegmentConversion  thrpt    3  312,840,119.8   ops/s
-JMH_FastCore.benchmarkFfmLinkerQuery              thrpt    3  541,209,881.0   ops/s
+Benchmark.benchmarkPlatformDetection              thrpt    3  428,190,412.1   ops/s
+Benchmark.benchmarkLibraryFileNameGeneration      thrpt    3   89,450,210.4   ops/s
+Benchmark.benchmarkFfmMemorySegmentConversion     thrpt    3  312,840,119.8   ops/s
+Benchmark.benchmarkFfmLinkerQuery                 thrpt    3  541,209,881.0   ops/s
 ```
 
 ### JNI vs. FFM Comparison
@@ -206,10 +206,9 @@ dependencies {
 
 ### Option 3: Direct Download (No Build Tool)
 
-Download pre-compiled release JARs directly from [GitHub Releases](https://github.com/andrestubbe/FastCore/releases/tag/0.1.1):
+Download the release JAR directly from [GitHub Releases](https://github.com/andrestubbe/FastCore/releases/tag/0.1.1):
 
 * ⚙️ **[FastCore-0.1.1.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.1/FastCore-0.1.1.jar)** (Core Library with FFM & JNI Engine)
-* 📦 **[FastCore-0.1.1-sources.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.1/FastCore-0.1.1-sources.jar)** (Full Java Source Archive)
 
 ---
 
@@ -218,7 +217,7 @@ Download pre-compiled release JARs directly from [GitHub Releases](https://githu
 | Benchmark / Demo Case | Description | Java Source | Launcher |
 | :--- | :--- | :--- | :--- |
 | **Platform & FFM Linker Showcase** | Validates OS architecture detection, library filename resolution, and FFM Linker readiness. | [Demo.java](examples/Demo/src/main/java/fastcore/Demo.java) | `run-demo.bat` |
-| **Official JMH Benchmark** | Measures throughput for platform detection, filename synthesis, and memory segment conversion. | [JMH_FastCore.java](examples/Benchmark/src/main/java/fastcore/benchmark/JMH_FastCore.java) | `run-benchmark.bat` |
+| **Official JMH Benchmark** | Measures throughput for platform detection, filename synthesis, and memory segment conversion. | [Benchmark.java](examples/Benchmark/src/main/java/fastcore/benchmark/Benchmark.java) | `run-benchmark.bat` |
 
 ---
 
@@ -237,9 +236,9 @@ Download pre-compiled release JARs directly from [GitHub Releases](https://githu
 | Platform | JNI Loader | FFM Native Linker |
 | :--- | :--- | :--- |
 | **Windows 10/11 (x64)** | ✅ Supported | ✅ Fully Supported (MSVC ABI) |
-| **Windows 11 (ARM64)** | 🔗 Supported | 🔗 Supported |
-| **Linux (x86_64)** | 🔗 Ready | 🔗 Ready (glibc / System V AMD64) |
-| **macOS (Apple Silicon M1-M4)** | 🔗 Ready | 🔗 Ready (Darwin ARM64) |
+| **Windows 11 (ARM64)** | 🚧 Planned | 🚧 Planned |
+| **Linux (x86_64)** | 🚧 Planned | 🚧 Planned |
+| **macOS (Apple Silicon M1-M4)** | 🚧 Planned | 🚧 Planned |
 
 ---
 

@@ -65,9 +65,9 @@ When `loadLibrary` or `resolveLibraryPath` is called, FastCore probes in strict 
 | OS / Architecture | Status | JNI Loading | FFM Downcalls |
 | :--- | :--- | :--- | :--- |
 | **Windows 10/11 (x64)** | ✅ Supported | Full | Full (MSVC ABI) |
-| **Windows 11 (ARM64)** | 🔗 Ready | Full | Full (ARM64 ABI) |
-| **Linux (x86_64 / glibc)** | 🔗 Ready | Full | Full (System V AMD64) |
-| **macOS (Apple Silicon / M1-M4)** | 🔗 Ready | Full | Full (Darwin ARM64) |
+| **Windows 11 (ARM64)** | 🚧 Planned | In Development | In Development |
+| **Linux (x86_64 / glibc)** | 🚧 Planned | In Development | In Development (System V AMD64) |
+| **macOS (Apple Silicon / M1-M4)** | 🚧 Planned | In Development | In Development (Darwin ARM64) |
 
 ---
 
