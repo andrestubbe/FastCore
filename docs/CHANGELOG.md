@@ -18,8 +18,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Hero Demo & Automation**:
   - Standalone runner `run-demo.bat` for quick verification.
   - Enhanced `Demo.java` testing both traditional JNI and Java 21+ FFM Linkers.
-- **Architectural Roadmap**:
-  - Added hidden `.TODO.md` outlining the FastJava FFM migration path.
 
 ### Changed
 - Upgraded Java language baseline from 17 to **21 LTS** (`--enable-preview`).

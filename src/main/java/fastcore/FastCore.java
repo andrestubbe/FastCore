@@ -230,6 +230,21 @@ public final class FastCore {
     }
 
     /**
+     * Looks up and links an exported native C function using a custom arena and default classloader.
+     *
+     * @param libraryName  Logical library name
+     * @param functionName Exported C function symbol
+     * @param descriptor   Function signature descriptor
+     * @param arena        Custom arena scoping the symbol lookup
+     * @return An invokable {@link MethodHandle}
+     * @throws Exception If the library or symbol cannot be resolved
+     */
+    public static MethodHandle lookupFunction(String libraryName, String functionName,
+                                              FunctionDescriptor descriptor, Arena arena) throws Exception {
+        return lookupFunction(libraryName, functionName, descriptor, null, arena);
+    }
+
+    /**
      * Zero-overhead conversion of a 64-bit native memory address (e.g. from {@code FastPointer})
      * into an unbounded {@link MemorySegment}.
      *
