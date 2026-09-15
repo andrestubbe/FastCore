@@ -72,7 +72,6 @@ public class JniDemo {
 - [Key Features](#key-features)
 - [Real-World Use Cases](#real-world-use-cases)
 - [Performance & JMH Benchmarks](#performance--jmh-benchmarks)
-- [FastJava Native Memory & Hardware Substrate](#fastjava-native-memory--hardware-substrate)
 - [API Quick Reference](#api-quick-reference)
 - [Technical Demos & Benchmarks](#technical-demos--benchmarks)
 - [Installation](#installation)
@@ -139,20 +138,6 @@ Benchmark.benchmarkFfmLinkerQuery                 thrpt    3  541,209,881.0   op
 | **GC Safepoints** | **Zero Safepoint Check** | Safepoint Required | No GC stalls on other threads |
 | **Pointer Transfer** | **Direct Register (0 ns)** | JNI Array Pinning | True Zero-Copy |
 | **C/C++ API** | **Standard C (`extern "C"`)** | JNIEnv* Boilerplate | Direct link to `llama.cpp` / Vulkan |
-
----
-
-## FastJava Native Memory & Hardware Substrate
-
-`FastCore` serves as the base layer of the **FastJava Low-Level Native Memory Substrate**:
-
-| Substrate Module | Role & Key Capability |
-| :--- | :--- |
-| **[`FastCore`](https://github.com/andrestubbe/FastCore)** | **Native Gateway & Loader** — Java 21+ FFM downcall linker, cross-platform DLL deployment, and native cache management. |
-| **[`FastPointer`](https://github.com/andrestubbe/FastPointer)** | **64-Bit Native Pointer Abstraction** — Zero-allocation address arithmetic, handle casting (`HWND`, `HANDLE`), and struct navigation. |
-| **[`FastMemory`](https://github.com/andrestubbe/FastMemory)** | **Off-Heap Direct Allocator** — High-speed 32-byte / 64-byte SIMD-aligned allocation and physical RAM page locking (`VirtualLock`). |
-| **[`FastSIMD`](https://github.com/andrestubbe/FastSIMD)** | **AVX2 / Vector Acceleration** — 256-bit SIMD hardware vectorization for memory scanning, math operations, and array sweeps. |
-| **[`FastSharedMemory`](https://github.com/andrestubbe/FastSharedMemory)** | **Zero-Copy IPC Substrate** — Ultra-fast inter-process shared memory buffers (< 78 ns latency) between Java processes and native C++ services. |
 
 ---
 
