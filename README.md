@@ -75,7 +75,7 @@ public class JniDemo {
 - [FastJava Native Memory & Hardware Substrate](#fastjava-native-memory--hardware-substrate)
 - [API Quick Reference](#api-quick-reference)
 - [Installation](#installation)
-- [Technical Examples & Demos](#technical-examples--demos)
+- [Technical Demos & Benchmarks](#technical-demos--benchmarks)
 - [Documentation](#documentation)
 - [Platform Support](#platform-support)
 - [License](#license)
@@ -212,7 +212,7 @@ Download the release JAR directly from [GitHub Releases](https://github.com/andr
 
 ---
 
-## Technical Examples & Demos
+## Technical Demos & Benchmarks
 
 | Benchmark / Demo Case | Description | Java Source | Launcher |
 | :--- | :--- | :--- | :--- |
