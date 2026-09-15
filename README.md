@@ -74,8 +74,8 @@ public class JniDemo {
 - [Performance & JMH Benchmarks](#performance--jmh-benchmarks)
 - [FastJava Native Memory & Hardware Substrate](#fastjava-native-memory--hardware-substrate)
 - [API Quick Reference](#api-quick-reference)
-- [Installation](#installation)
 - [Technical Demos & Benchmarks](#technical-demos--benchmarks)
+- [Installation](#installation)
 - [Documentation](#documentation)
 - [Platform Support](#platform-support)
 - [License](#license)
@@ -170,6 +170,15 @@ Benchmark.benchmarkFfmLinkerQuery                 thrpt    3  541,209,881.0   op
 
 ---
 
+## Technical Demos & Benchmarks
+
+| Case | Java Example | Launcher | Description |
+|---|---|---|---|
+| **Platform & FFM Linker Showcase** | [Demo.java](examples/Demo/src/main/java/fastcore/Demo.java) | `run-demo.bat` | Validates OS architecture detection, library filename resolution, and FFM Linker readiness. |
+| **JMH Microbenchmark Suite** | [Benchmark.java](examples/Benchmark/src/main/java/fastcore/benchmark/Benchmark.java) | `run-benchmark.bat` | OpenJDK JMH throughput & latency test suite for platform detection, filename synthesis, and memory segment conversion. |
+
+---
+
 ## Installation
 
 ### Option 1: Maven (Recommended via JitPack)
@@ -209,15 +218,6 @@ dependencies {
 Download the release JAR directly from [GitHub Releases](https://github.com/andrestubbe/FastCore/releases/tag/0.1.1):
 
 * ⚙️ **[FastCore-0.1.1.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.1/FastCore-0.1.1.jar)** (Core Library with FFM & JNI Engine)
-
----
-
-## Technical Demos & Benchmarks
-
-| Case | Java Example | Launcher | Description |
-|---|---|---|---|
-| **Platform & FFM Linker Showcase** | [Demo.java](examples/Demo/src/main/java/fastcore/Demo.java) | `run-demo.bat` | Validates OS architecture detection, library filename resolution, and FFM Linker readiness. |
-| **JMH Microbenchmark Suite** | [Benchmark.java](examples/Benchmark/src/main/java/fastcore/benchmark/Benchmark.java) | `run-benchmark.bat` | OpenJDK JMH throughput & latency test suite for platform detection, filename synthesis, and memory segment conversion. |
 
 ---
 
