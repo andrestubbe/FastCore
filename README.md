@@ -214,10 +214,10 @@ Download the release JAR directly from [GitHub Releases](https://github.com/andr
 
 ## Technical Demos & Benchmarks
 
-| Benchmark / Demo Case | Description | Java Source | Launcher |
-| :--- | :--- | :--- | :--- |
-| **Platform & FFM Linker Showcase** | Validates OS architecture detection, library filename resolution, and FFM Linker readiness. | [Demo.java](examples/Demo/src/main/java/fastcore/Demo.java) | `run-demo.bat` |
-| **Official JMH Benchmark** | Measures throughput for platform detection, filename synthesis, and memory segment conversion. | [Benchmark.java](examples/Benchmark/src/main/java/fastcore/benchmark/Benchmark.java) | `run-benchmark.bat` |
+| Case | Java Example | Launcher | Description |
+|---|---|---|---|
+| **Platform & FFM Linker Showcase** | [Demo.java](examples/Demo/src/main/java/fastcore/Demo.java) | `run-demo.bat` | Validates OS architecture detection, library filename resolution, and FFM Linker readiness. |
+| **JMH Microbenchmark Suite** | [Benchmark.java](examples/Benchmark/src/main/java/fastcore/benchmark/Benchmark.java) | `run-benchmark.bat` | OpenJDK JMH throughput & latency test suite for platform detection, filename synthesis, and memory segment conversion. |
 
 ---
 
