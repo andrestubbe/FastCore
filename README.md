@@ -96,6 +96,13 @@ Standard native integration in Java has historically been plagued by structural 
 - **Automated Anti-Virus Friendly Extraction**: Extracts embedded `.dll`/`.so` binaries to a structured user cache (`~/.fastcore/native/`) with content deduplication to prevent OS Defender/WDAC file locking.
 - **FastPointer & MemorySegment Synergy**: Seamless zero-copy bridge between 64-bit native pointers (`FastPointer.address()`) and Java off-heap memory segments.
 
+| Feature | Legacy JNI (System.loadLibrary) | JNA (Java Native Access) | FastCore |
+|:---|:---|:---|:---|
+| **Call Transition Overhead** | ~15–30 ns (JNI boundary penalty) | ~100–300 ns (Reflection/boxing) | **~2–5 ns (Direct CPU ABI registers)** |
+| **DLL Extraction & Deployment**| Manual `java.library.path` needed| Temporary tempfile extraction | **Automated AV-safe cache deduplication**|
+| **C ABI Binding** | Boilerplate `jni.h` / C++ stubs | Dynamic reflection interfaces | **Java 21+ Project Panama FFM Handle** |
+| **Safepoint / GC Contention** | Array pinning GC pauses | Heavy struct wrapper churn | **Zero GC register passing** |
+
 ---
 
 ## Key Features
