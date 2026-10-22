@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.2] - 2026-10-22
+
+### Added
+- **`FastCore.addLibraryDirectory(Path / String)`**:
+  - Dynamically registers native `.dll` folders at runtime.
+  - Updates `java.library.path` property seamlessly.
+  - Links directly to Windows kernel `SetDllDirectoryW` via Java 21+ FFM downcall handle, eliminating the need for system-level `PATH` modifications.
+
 ## [0.1.1] - 2026-09-13
 
 ### Added

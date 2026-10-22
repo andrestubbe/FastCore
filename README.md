@@ -1,10 +1,10 @@
-# FastCore 0.1.1 [ALPHA-2026-09] — Native Library Loader & FFM Foreign Function Gateway for Java
+# FastCore 0.1.2 [ALPHA-2026-09] — Native Library Loader & FFM Foreign Function Gateway for Java
 
-[![Status](https://img.shields.io/badge/status-0.1.1-brightgreen.svg)](https://github.com/andrestubbe/FastCore/releases/tag/0.1.1)
+[![Status](https://img.shields.io/badge/status-0.1.2-brightgreen.svg)](https://github.com/andrestubbe/FastCore/releases/tag/0.1.2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java](https://img.shields.io/badge/Java-21+-blue.svg)](https://www.java.com)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010+-lightgrey.svg)]()
-[![JitPack](https://img.shields.io/badge/JitPack-0.1.1-green.svg)](https://jitpack.io/#andrestubbe/FastCore)
+[![JitPack](https://img.shields.io/badge/JitPack-0.1.2-green.svg)](https://jitpack.io/#andrestubbe/FastCore)
 
 ---
 
@@ -189,7 +189,7 @@ Add the JitPack repository and FastCore dependency to your `pom.xml`:
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>FastCore</artifactId>
-        <version>0.1.1</version>
+        <version>0.1.2</version>
     </dependency>
 </dependencies>
 ```
@@ -201,15 +201,15 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    implementation 'com.github.andrestubbe:FastCore:0.1.1'
+    implementation 'com.github.andrestubbe:FastCore:0.1.2'
 }
 ```
 
 ### Option 3: Direct Download (No Build Tool)
 
-Download the release JAR directly from [GitHub Releases](https://github.com/andrestubbe/FastCore/releases/tag/0.1.1):
+Download the release JAR directly from [GitHub Releases](https://github.com/andrestubbe/FastCore/releases/tag/0.1.2):
 
-* ⚙️ **[FastCore-0.1.1.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.1/FastCore-0.1.1.jar)** (Core Library with FFM & JNI Engine)
+* ⚙️ **[FastCore-0.1.2.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.2/FastCore-0.1.2.jar)** (Core Library with FFM & JNI Engine)
 
 ---
 

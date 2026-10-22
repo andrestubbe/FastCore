@@ -7,7 +7,7 @@
 
     <groupId>com.github.andrestubbe</groupId>
     <artifactId>FastCore</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <packaging>jar</packaging>
 
     <name>fastcore</name>
@@ -20,20 +20,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>https://opensource.org/licenses/MIT</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <scm>
-        <connection>scm:git:git://github.com/andrestubbe/${project.name}.git</connection>
-        <developerConnection>scm:git:ssh://github.com:andrestubbe/${project.name}.git</developerConnection>
-        <url>https://github.com/andrestubbe/${project.name}/tree/main</url>
-    </scm>
-
     <build>
         <plugins>
             <!-- Maven Compiler Plugin -->
@@ -44,6 +30,9 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
+                    <compilerArgs>
+                        <arg>--enable-preview</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 

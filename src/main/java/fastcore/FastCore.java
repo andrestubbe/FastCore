@@ -5,6 +5,7 @@ import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.Linker;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.SymbolLookup;
+import java.lang.foreign.ValueLayout;
 import java.lang.invoke.MethodHandle;
 import java.nio.file.Path;
 import java.util.Map;
@@ -42,7 +43,53 @@ public final class FastCore {
     /**
      * Current FastCore runtime version.
      */
-    public static final String VERSION = "0.1.1";
+    public static final String VERSION = "0.1.2";
+
+    /**
+     * Configures a filesystem directory for native library loading.
+     * Updates java.library.path and registers the directory with Windows kernel via SetDllDirectoryW.
+     *
+     * @param directoryPath Absolute or relative path to the directory containing .dll files
+     * @return true if directory exists and was registered successfully
+     */
+    public static boolean addLibraryDirectory(Path directoryPath) {
+        if (directoryPath == null || !java.nio.file.Files.isDirectory(directoryPath)) {
+            return false;
+        }
+        try {
+            String pathStr = directoryPath.toAbsolutePath().normalize().toString();
+            String existing = System.getProperty("java.library.path", "");
+            System.setProperty("java.library.path", pathStr + ";" + existing);
+
+            var lookup = SymbolLookup.libraryLookup("kernel32", Arena.global());
+            var sym = lookup.find("SetDllDirectoryW");
+            if (sym.isPresent()) {
+                var mh = NATIVE_LINKER.downcallHandle(
+                        sym.get(),
+                        FunctionDescriptor.of(ValueLayout.JAVA_INT, ValueLayout.ADDRESS)
+                );
+                try (Arena arena = Arena.ofConfined()) {
+                    byte[] utf16 = (pathStr + "\0").getBytes(java.nio.charset.StandardCharsets.UTF_16LE);
+                    var seg = arena.allocate(utf16.length, 2);
+                    seg.copyFrom(MemorySegment.ofArray(utf16));
+                    mh.invokeExact(seg);
+                }
+            }
+            return true;
+        } catch (Throwable ignored) {
+            return false;
+        }
+    }
+
+    /**
+     * Configures a filesystem directory for native library loading.
+     *
+     * @param directoryPath Path string to the directory containing native binaries
+     * @return true if directory exists and was registered successfully
+     */
+    public static boolean addLibraryDirectory(String directoryPath) {
+        return directoryPath != null && addLibraryDirectory(Path.of(directoryPath));
+    }
 
     private static final Map<String, SymbolLookup> FFM_LOOKUPS = new ConcurrentHashMap<>();
     private static final Map<String, MethodHandle> METHOD_HANDLE_CACHE = new ConcurrentHashMap<>();
